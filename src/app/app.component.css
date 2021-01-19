@@ -1,0 +1,28 @@
+header a{
+    display:inline-block;
+    height:100px;
+    width:100px;
+    font:bold 18px/25px Arial;
+    text-decoration:none;
+    color:#fff;
+    text-align:center;
+    margin-right:20px;
+    background-size: 100% 100%;
+    background-color:grey;
+    border-radius:10px;
+}
+header .estudos{
+    background-image:url("/assets/img/icon/estudos.png");
+}
+header .novo{
+    background-image:url("/assets/img/icon/novo.png");
+}
+footer{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:18px;
+	text-align:center;
+	font:15px Arial
+}
