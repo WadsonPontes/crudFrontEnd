@@ -2,27 +2,98 @@ header a{
     display:inline-block;
     height:100px;
     width:100px;
-    font:bold 18px/25px Arial;
+    font:bold 18px/25px Verdana,sans-serif;
     text-decoration:none;
     color:#fff;
     text-align:center;
-    margin-right:20px;
     background-size: 100% 100%;
-    background-color:grey;
+    background-color: #2196F3;
     border-radius:10px;
+    /*border-style: outset;*/
 }
-header .estudos{
+header .menu-estudos{
+    margin-right:25px;
     background-image:url("/assets/img/icon/estudos.png");
 }
-header .novo{
+header .menu-novo{
+    margin-right:0;
     background-image:url("/assets/img/icon/novo.png");
 }
+section .estudo{
+    position:relative;
+    min-height:100px;
+    padding:5px 15px;
+    margin:25px 0;
+    color:#000;
+    border:1px solid #2196F3;
+    /*border-left:6px solid #2196F3;
+    border-right:6px solid #2196F3;*/
+    /*border-left-style:outset;
+    border-right-style:outset;
+    border-top-style: outset;*/
+    background:#ddffff;
+    /*border-top:1px solid grey;
+    border-bottom:1px solid grey;*/
+    /*border-radius:10px;
+    background:#C8C8C8;*/
+}
+section .estudo h3{
+    padding-right:120px;
+    font:bold 18px/20px Verdana,sans-serif;
+}
+section .estudo p{
+    font:normal 15px/20px Verdana,sans-serif;
+}
+section .estudo input{
+    display:block;
+    height:30px;
+    width:100%;
+    padding:0;
+    margin:15px 0;
+    font:bold 18px/20px Verdana,sans-serif;
+}
+section .estudo textarea{
+    display:block;
+    min-height:30px;
+    width:100%;
+    padding:0;
+    margin:10px 0;
+    font:normal 15px/20px Verdana,sans-serif;
+}
+section .estudo input:focus,section .estudo textarea:focus{
+    outline: 1px solid #2196F3;
+    border:none;
+}
+section .estudo a{
+    display:inline-block;
+    position:absolute;
+    height:50px;
+    width:50px;
+    font:bold 18px/25px Verdana,sans-serif;
+    text-decoration:none;
+    color:#fff;
+    text-align:center;
+    background-size: 100% 100%;
+    background-color: #2196F3;
+    border-radius:250%;
+    /*border-style: outset;*/
+}
+section .estudo .menu-editar{
+    top:10px;
+    right:80px;
+    background-image:url("/assets/img/icon/editar.png");
+}
+section .estudo .menu-remover{
+    top:10px;
+    right:10px;
+    background-image:url("/assets/img/icon/remover.png");
+}
 footer{
-	position:fixed;
+	position:absolute;
 	bottom:0;
 	left:0;
 	width:100%;
-	height:18px;
 	text-align:center;
-	font:15px Arial
+    font:15px Arial;
+    background:#fff;
 }

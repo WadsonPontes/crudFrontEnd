@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body{
+    position: relative;
     padding:10px;
-    margin:0;
-    word-break:break-all;
-    background-image:url("/assets/img/background.png");
+    margin:0 5vw;
+    word-break:break-word;
+    /*background:#C9C9F4;*/
+    /*background-image:url("/assets/img/background.png");*/
 }
