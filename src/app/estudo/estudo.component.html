@@ -1,0 +1,13 @@
+<form *ngIf="estudos.editando" novalidate #form="ngForm">
+    <div class="estudo">
+        <input name="titulo" ngModel type="text" [(ngModel)]="estudos.titulo" (focusout)="editado(form.value)">
+        <textarea name="descricao" ngModel [(ngModel)]="estudos.descricao" (focusout)="editado(form.value)"></textarea>
+        <input name="editando" ngModel type="hidden" [(ngModel)]="estudos.editando">
+    </div>
+</form>
+<div class="estudo" *ngIf="!estudos.editando">
+    <h3>{{estudos.titulo}}</h3>
+    <a class="menu-editar" href="#" (click)="editar()"></a>
+    <a class="menu-remover" href="#"></a>
+    <p>{{estudos.descricao}}</p>
+</div>

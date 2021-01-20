@@ -1,25 +1,4 @@
-header a{
-    display:inline-block;
-    height:100px;
-    width:100px;
-    font:bold 18px/25px Verdana,sans-serif;
-    text-decoration:none;
-    color:#fff;
-    text-align:center;
-    background-size: 100% 100%;
-    background-color: #2196F3;
-    border-radius:10px;
-    /*border-style: outset;*/
-}
-header .menu-estudos{
-    margin-right:25px;
-    background-image:url("/assets/img/icon/estudos.png");
-}
-header .menu-novo{
-    margin-right:0;
-    background-image:url("/assets/img/icon/novo.png");
-}
-section .estudo{
+.estudo{
     position:relative;
     min-height:100px;
     padding:5px 15px;
@@ -37,14 +16,14 @@ section .estudo{
     /*border-radius:10px;
     background:#C8C8C8;*/
 }
-section .estudo h3{
+.estudo h3{
     padding-right:120px;
     font:bold 18px/20px Verdana,sans-serif;
 }
-section .estudo p{
+.estudo p{
     font:normal 15px/20px Verdana,sans-serif;
 }
-section .estudo input{
+.estudo input{
     display:block;
     box-sizing:border-box;
     height:30px;
@@ -53,7 +32,7 @@ section .estudo input{
     margin:15px 0;
     font:bold 18px/20px Verdana,sans-serif;
 }
-section .estudo textarea{
+.estudo textarea{
     display:block;
     box-sizing:border-box;
     min-height:30px;
@@ -62,11 +41,11 @@ section .estudo textarea{
     margin:10px 0;
     font:normal 15px/20px Verdana,sans-serif;
 }
-section .estudo input:focus,section .estudo textarea:focus{
+.estudo input:focus,.estudo textarea:focus{
     outline: 1px solid #2196F3;
     border:none;
 }
-section .estudo a{
+.estudo a{
     display:inline-block;
     position:absolute;
     height:50px;
@@ -80,22 +59,13 @@ section .estudo a{
     border-radius:250%;
     /*border-style: outset;*/
 }
-section .estudo .menu-editar{
+.estudo .menu-editar{
     top:10px;
     right:80px;
     background-image:url("/assets/img/icon/editar.png");
 }
-section .estudo .menu-remover{
+.estudo .menu-remover{
     top:10px;
     right:10px;
     background-image:url("/assets/img/icon/remover.png");
-}
-footer{
-	position:absolute;
-	bottom:0;
-	left:0;
-	width:100%;
-	text-align:center;
-    font:15px Arial;
-    background:#fff;
 }
