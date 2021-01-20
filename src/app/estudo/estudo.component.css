@@ -27,7 +27,7 @@
     display:block;
     box-sizing:border-box;
     height:30px;
-    width:100%;
+    width:calc(100% - 130px);
     padding:0 5px;
     margin:15px 0;
     font:bold 18px/20px Verdana,sans-serif;
@@ -62,10 +62,21 @@
 .estudo .menu-editar{
     top:10px;
     right:80px;
-    background-image:url("/assets/img/icon/editar.png");
+    background-image:url("/assets/img/icon/editar2.png");
 }
 .estudo .menu-remover{
     top:10px;
     right:10px;
     background-image:url("/assets/img/icon/remover.png");
+}
+
+.estudo .menu-finalizar{
+    top:10px;
+    right:80px;
+    background-image:url("/assets/img/icon/finalizar.png");
+}
+.estudo .menu-cancelar{
+    top:10px;
+    right:10px;
+    background-image:url("/assets/img/icon/cancelar.png");
 }

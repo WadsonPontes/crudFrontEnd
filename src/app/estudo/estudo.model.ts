@@ -1,3 +1,10 @@
 export class Estudo {
-    constructor(public titulo: string, public descricao: string, public editando: boolean) {}
+    constructor(
+        public id: number,
+        public titulo: string,
+        public titulo_final: string,
+        public descricao: string,
+        public descricao_final: string,
+        public editando: boolean
+    ) {}
 }
