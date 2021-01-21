@@ -59,6 +59,9 @@
     border-radius:250%;
     /*border-style: outset;*/
 }
+.estudo a:hover{
+    cursor: pointer;
+}
 .estudo .menu-editar{
     top:10px;
     right:80px;

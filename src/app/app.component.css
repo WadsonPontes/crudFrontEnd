@@ -11,6 +11,9 @@ header a{
     border-radius:10px;
     /*border-style: outset;*/
 }
+header a:hover{
+    cursor: pointer;
+}
 header .menu-estudos{
     margin-right:25px;
     background-image:url("/assets/img/icon/estudos.png");
@@ -20,7 +23,7 @@ header .menu-novo{
     background-image:url("/assets/img/icon/novo.png");
 }
 footer{
-	position:absolute;
+	position: fixed;
 	bottom:0;
 	left:0;
 	width:100%;

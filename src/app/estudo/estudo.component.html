@@ -1,14 +1,14 @@
-<form *ngFor="let estudo of estudos" novalidate #form="ngForm">
+<form novalidate #form="ngForm">
     <div class="estudo" *ngIf="estudo.editando">
         <input name="titulo" ngModel type="text" [(ngModel)]="estudo.titulo">
-        <a class="menu-finalizar" href="#" (click)="finalizar(estudo.id)"></a>
-        <a class="menu-cancelar" href="#" (click)="cancelar(estudo.id)"></a>
+        <a class="menu-finalizar" (click)="finalizar()"></a>
+        <a class="menu-cancelar" (click)="cancelar()"></a>
         <textarea name="descricao" ngModel [(ngModel)]="estudo.descricao"></textarea>
     </div>
     <div class="estudo" *ngIf="!estudo.editando">
         <h3>{{estudo.titulo}}</h3>
-        <a class="menu-editar" href="#" (click)="editar(estudo.id)"></a>
-        <a class="menu-remover" href="#" (click)="remover(estudo.id)"></a>
+        <a class="menu-editar" (click)="editar()"></a>
+        <a class="menu-remover" (click)="remover()"></a>
         <p>{{estudo.descricao}}</p>
     </div>
 </form>

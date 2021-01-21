@@ -1,10 +1,10 @@
 <header>
-  <a class="menu-estudos" href="#">Estudos</a>
-  <a class="menu-novo" href="#">Novo</a>
+  <a class="menu-estudos">Estudos</a>
+  <a class="menu-novo" (click)="novo()">Novo</a>
 </header>
 
 <section>
-  <app-estudo></app-estudo>
+  <app-estudo *ngFor="let estudo of estudos" [estudo]="estudo"></app-estudo>
   <router-outlet></router-outlet>
 </section>
 

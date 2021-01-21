@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { Estudo } from './estudo.model';
 
 @Component({
@@ -7,46 +8,30 @@ import { Estudo } from './estudo.model';
   styleUrls: ['./estudo.component.css']
 })
 export class EstudoComponent implements OnInit {
-  @Input() estudos: Estudo[] = [
-      {
-      'id': 0,
-      'titulo': 'Estudar Angular',
-      'titulo_final': 'Estudar Angular',
-      'descricao': 'Estudar 6 horas por dia Angular',
-      'descricao_final': 'Estudar 6 horas por dia Angular',
-      'editando': false
-    },
-    {
-      'id': 1,
-      'titulo': 'Estudar .NET Core',
-      'titulo_final': 'Estudar .NET Core',
-      'descricao': 'Estudar 6 horas por dia .NET Core',
-      'descricao_final': 'Estudar 6 horas por dia .NET Core',
-      'editando': false
-    }
-  ]
+  @Input() estudo: Estudo = new Estudo(0, '', '')
+
   constructor() {}
 
   ngOnInit(): void {
   }
 
-  editar(id: number): void {
-    this.estudos[id].editando = true
+  editar(): void {
+    this.estudo.editando = true
   }
 
-  finalizar(id: number): void {
-    this.estudos[id].titulo_final = this.estudos[id].titulo
-    this.estudos[id].descricao_final = this.estudos[id].descricao
-    this.estudos[id].editando = false
+  finalizar(): void {
+    this.estudo.titulo_final = this.estudo.titulo
+    this.estudo.descricao_final = this.estudo.descricao
+    this.estudo.editando = false
   }
 
-  cancelar(id: number): void {
-    this.estudos[id].titulo = this.estudos[id].titulo_final
-    this.estudos[id].descricao = this.estudos[id].descricao_final
-    this.estudos[id].editando = false
+  cancelar(): void {
+    this.estudo.titulo = this.estudo.titulo_final
+    this.estudo.descricao = this.estudo.descricao_final
+    this.estudo.editando = false
   }
 
-  remover(id: number): void {
-
+  remover(): void {
+    
   }
 }
