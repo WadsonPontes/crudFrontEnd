@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { EstudoComponent } from './estudo/estudo.component';
+import { Component, OnInit } from '@angular/core';
+import { AppService } from './app.service';
 import { Estudo } from './estudo/estudo.model';
 
 @Component({
@@ -7,19 +7,26 @@ import { Estudo } from './estudo/estudo.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Aprendendo'
 
-  estudos: Estudo[] = [
-    new Estudo(1, 'Estudar Angular', 'Estudar 6 horas por dia Angular'),
-    new Estudo(0, 'Estudar .NET Core', 'Estudar 6 horas por dia .NET Core')
-]
+  constructor(private appService: AppService) {}
 
-  novo(): void{
-    this.estudos.unshift(new Estudo(this.estudos.length, '', ''));
+  ngOnInit(): void {
+    this.carregar()
   }
 
-  remover(): void{
-    this.estudos.pop()
+  novo(): void{
+    let estudo: Estudo = new Estudo(0, '', '')
+
+    this.appService.criar(estudo)
+  }
+
+  getEstudos(): Estudo[] {
+    return this.appService.estudos
+  }
+
+  carregar(): void{
+    this.appService.listar()
   }
 }

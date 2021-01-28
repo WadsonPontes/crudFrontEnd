@@ -9,16 +9,68 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AppService {
-
-  estudos: Estudo[] = [
-    new Estudo(1, 'Estudar Angular', 'Estudar 6 horas por dia Angular'),
-    new Estudo(0, 'Estudar .NET Core', 'Estudar 6 horas por dia .NET Core')
-  ]
+  estudos: Estudo[] = []
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<Estudo[]> {
-      return this.http.get<Estudo[]>(`${env.URL}/listar`)
-      //return this.estudos
+  listar(): void {
+    this.http.get<Estudo[]>(`${env.URL}/listar`)
+      .subscribe(
+        (estudos: Estudo[]) => {
+          this.estudos = estudos
+        },
+        (erro: any) => {
+          console.error(erro)
+        }
+      )
+  }
+
+  detalhar(id: number): void {
+    this.http.get<Estudo>(`${env.URL}/${id}`)
+      .subscribe(
+        (e: Estudo) => {
+          this.estudos[this.estudos.findIndex(x => x.id == id)] = e
+        },
+        (erro: any) => {
+          console.error(erro)
+        }
+      )
+  }
+
+  criar(estudo: Estudo): void {
+    this.http.post<Estudo>(`${env.URL}/criar`, estudo)
+      .subscribe(
+        (e: Estudo) => {
+          this.estudos.unshift(e)
+          this.estudos[0].editando = true
+        },
+        (erro: any) => {
+          console.error(erro)
+        }
+      )
+  }
+
+  editar(estudo: Estudo): void {
+    this.http.put<Estudo>(`${env.URL}/editar`, estudo)
+      .subscribe(
+        (e: Estudo) => {
+          this.estudos[this.estudos.findIndex(x => x.id == estudo.id)] = e
+        },
+        (erro: any) => {
+          console.error(erro)
+        }
+      )
+  }
+
+  apagar(id: number): void {
+    this.http.delete<Estudo>(`${env.URL}/${id}`)
+      .subscribe(
+        (e: Estudo) => {
+          this.estudos = this.estudos.filter(x => x.id != id)
+        },
+        (erro: any) => {
+          console.error(erro)
+        }
+      )
   }
 }

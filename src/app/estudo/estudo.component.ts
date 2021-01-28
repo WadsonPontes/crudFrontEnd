@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
+import { AppService } from '../app.service';
 import { Estudo } from './estudo.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { Estudo } from './estudo.model';
 export class EstudoComponent implements OnInit {
   @Input() estudo: Estudo = new Estudo(0, '', '')
 
-  constructor() {}
+  constructor(private appService: AppService) {}
 
   ngOnInit(): void {
   }
@@ -20,18 +20,14 @@ export class EstudoComponent implements OnInit {
   }
 
   finalizar(): void {
-    this.estudo.titulo_final = this.estudo.titulo
-    this.estudo.descricao_final = this.estudo.descricao
-    this.estudo.editando = false
+    this.appService.editar(this.estudo)
   }
 
   cancelar(): void {
-    this.estudo.titulo = this.estudo.titulo_final
-    this.estudo.descricao = this.estudo.descricao_final
-    this.estudo.editando = false
+    this.appService.detalhar(this.estudo.id)
   }
 
   remover(): void {
-    
+    this.appService.apagar(this.estudo.id)
   }
 }
