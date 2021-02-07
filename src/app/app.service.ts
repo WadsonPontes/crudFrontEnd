@@ -51,7 +51,7 @@ export class AppService {
   }
 
   editar(estudo: Estudo): void {
-    this.http.put<Estudo>(`${env.URL}/editar`, estudo)
+    this.http.put<Estudo>(`${env.URL}/${estudo.id}/editar`, estudo)
       .subscribe(
         (e: Estudo) => {
           this.estudos[this.estudos.findIndex(x => x.id == estudo.id)] = e
